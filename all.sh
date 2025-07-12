@@ -32,6 +32,7 @@ winner() {
 
 for_a_single() {
     echo $1
+    bash ./compile.sh $1
     poop_rust=$(poop ./bin/rust-$1)
     poop_cpp=$(poop ./bin/cpp-$1)
     wall_time_rust=$(echo "$poop_rust" | awk '/wall_time/ {print $2}')
@@ -42,7 +43,7 @@ for_a_single() {
     peak_rss_cpp=$(echo "$poop_cpp" | awk '/peak_rss/ {print $2}')
     peak_rss_ratio=$(divide $(to_bytes $peak_rss_cpp) $(to_bytes $peak_rss_rust))
     
-    cat <<EOT >> xx.md
+    cat <<EOT >> result.md
         <tr>
             <td rowspan=2>$1</td>
             <td>time</td>
@@ -61,7 +62,7 @@ for_a_single() {
 EOT
 }
 
-cat <<EOT > xx.md
+cat <<EOT > result.md
 <table>
     <thead>
         <tr>
@@ -75,12 +76,12 @@ cat <<EOT > xx.md
     </thead>
 EOT
 
-for_a_single hashset
-for_a_single ordered_set
-for_a_single vector_push
-for_a_single vector_push_reserved
+for i in $(ls benches/*.rs)
+do
+    for_a_single $(basename $i .rs)
+done
 
-cat <<EOT >> xx.md
+cat <<EOT >> result.md
     </tbody>
 </table>
 EOT

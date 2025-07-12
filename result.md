@@ -12,9 +12,9 @@
         <tr>
             <td rowspan=2>hashset</td>
             <td>time</td>
-            <td>77.3ms</td>
-            <td>482ms</td>
-            <td>6.2x</td>
+            <td>78.6ms</td>
+            <td>504ms</td>
+            <td>6.4x</td>
             <td>Rust</td>
         </tr>
         <tr>
@@ -27,40 +27,55 @@
         <tr>
             <td rowspan=2>ordered_set</td>
             <td>time</td>
-            <td>316ms</td>
-            <td>987ms</td>
+            <td>312ms</td>
+            <td>975ms</td>
             <td>3.1x</td>
             <td>Rust</td>
         </tr>
         <tr>
             <td>memory</td>
-            <td>18.6MB</td>
-            <td>51.7MB</td>
+            <td>18.5MB</td>
+            <td>51.6MB</td>
             <td>2.8x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td rowspan=2>priority_queue</td>
+            <td>time</td>
+            <td>555ms</td>
+            <td>755ms</td>
+            <td>1.4x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td>memory</td>
+            <td>42.8MB</td>
+            <td>71.5MB</td>
+            <td>1.7x</td>
             <td>Rust</td>
         </tr>
         <tr>
             <td rowspan=2>vector_push</td>
             <td>time</td>
-            <td>265ms</td>
-            <td>387ms</td>
-            <td>1.5x</td>
+            <td>294ms</td>
+            <td>420ms</td>
+            <td>1.4x</td>
             <td>Rust</td>
         </tr>
         <tr>
             <td>memory</td>
             <td>803MB</td>
             <td>1.08GB</td>
-            <td>0x</td>
+            <td>1.3x</td>
             <td>Rust</td>
         </tr>
         <tr>
             <td rowspan=2>vector_push_reserved</td>
             <td>time</td>
-            <td>240ms</td>
-            <td>158ms</td>
-            <td>0.7x</td>
-            <td>Rust</td>
+            <td>256ms</td>
+            <td>162ms</td>
+            <td>0.6x</td>
+            <td>C++</td>
         </tr>
         <tr>
             <td>memory</td>
