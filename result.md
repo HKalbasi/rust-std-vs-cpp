@@ -1,0 +1,73 @@
+<table>
+    <thead>
+        <tr>
+            <th>Benchmark name</th>
+            <th>Measured property</th>
+            <th>Rust</th>
+            <th>C++</th>
+            <th>Ratio</th>
+            <th>Winner</th>
+        </tr>
+    </thead>
+        <tr>
+            <td rowspan=2>hashset</td>
+            <td>time</td>
+            <td>77.3ms</td>
+            <td>482ms</td>
+            <td>6.2x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td>memory</td>
+            <td>30.1MB</td>
+            <td>46.8MB</td>
+            <td>1.6x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td rowspan=2>ordered_set</td>
+            <td>time</td>
+            <td>316ms</td>
+            <td>987ms</td>
+            <td>3.1x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td>memory</td>
+            <td>18.6MB</td>
+            <td>51.7MB</td>
+            <td>2.8x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td rowspan=2>vector_push</td>
+            <td>time</td>
+            <td>265ms</td>
+            <td>387ms</td>
+            <td>1.5x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td>memory</td>
+            <td>803MB</td>
+            <td>1.08GB</td>
+            <td>0x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td rowspan=2>vector_push_reserved</td>
+            <td>time</td>
+            <td>240ms</td>
+            <td>158ms</td>
+            <td>0.7x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
+            <td>memory</td>
+            <td>802MB</td>
+            <td>803MB</td>
+            <td>1x</td>
+            <td>Rust</td>
+        </tr>
+    </tbody>
+</table>
