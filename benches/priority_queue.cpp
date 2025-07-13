@@ -4,7 +4,7 @@
 #include <ranges>
 
 struct MyRand {
-    uint64_t seed = 5;
+    uint64_t seed = 0;
 
     uint64_t next() {
         seed = seed * 123456789 + 101112131415;
