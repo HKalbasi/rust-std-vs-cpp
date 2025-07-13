@@ -1,4 +1,8 @@
 {
+    "deque_push": {
+        "description": "100M push of u64 numbers in VecDeque and deque",
+        "comment_on_result": ""
+    },
     "hashset": {
         "description": "1M insert of random u64 numbers in HashSet and unordered_set",
         "comment_on_result": "Rust uses Swiss table for its HashSet implementation, so it is faster"
@@ -17,6 +21,14 @@
     },
     "vector_push_reserved": {
         "description": "100M push of u64 numbers in Vec and vector when reserve(100M+5) is called",
+        "comment_on_result": ""
+    },
+    "stable_sort": {
+        "description": "Sort 1M random u64 numbers using sort and stable_sort",
+        "comment_on_result": ""
+    },
+    "unstable_sort": {
+        "description": "Sort 1M random u64 numbers using unstable_sort and sort",
         "comment_on_result": ""
     }
 }

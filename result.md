@@ -12,6 +12,23 @@
         </tr>
     </thead>
         <tr>
+            <td rowspan=2>deque_push</td>
+            <td>time</td>
+            <td>248ms</td>
+            <td>753ms</td>
+            <td>3x</td>
+            <td>Rust</td>
+            <td rowspan=2>100M push of u64 numbers in VecDeque and deque</td>
+            <td rowspan=2></td>
+        </tr>
+        <tr>
+            <td>memory</td>
+            <td>803MB</td>
+            <td>843MB</td>
+            <td>1x</td>
+            <td>Rust</td>
+        </tr>
+        <tr>
             <td rowspan=2>hashset</td>
             <td>time</td>
             <td>78.6ms</td>
@@ -61,6 +78,40 @@
             <td>71.5MB</td>
             <td>1.7x</td>
             <td>Rust</td>
+        </tr>
+        <tr>
+            <td rowspan=2>stable_sort</td>
+            <td>time</td>
+            <td>46.1ms</td>
+            <td>106ms</td>
+            <td>2.3x</td>
+            <td>Rust</td>
+            <td rowspan=2>Sort 1M random u64 numbers using sort and stable_sort</td>
+            <td rowspan=2></td>
+        </tr>
+        <tr>
+            <td>memory</td>
+            <td>25.8MB</td>
+            <td>15.0MB</td>
+            <td>0.6x</td>
+            <td>C++</td>
+        </tr>
+        <tr>
+            <td rowspan=2>unstable_sort</td>
+            <td>time</td>
+            <td>33.4ms</td>
+            <td>66.4ms</td>
+            <td>2x</td>
+            <td>Rust</td>
+            <td rowspan=2>Sort 1M random u64 numbers using unstable_sort and sort</td>
+            <td rowspan=2></td>
+        </tr>
+        <tr>
+            <td>memory</td>
+            <td>18.1MB</td>
+            <td>11.6MB</td>
+            <td>0.6x</td>
+            <td>C++</td>
         </tr>
         <tr>
             <td rowspan=2>vector_push</td>
