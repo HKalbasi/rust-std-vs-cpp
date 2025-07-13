@@ -7,6 +7,8 @@
             <th>C++</th>
             <th>Ratio</th>
             <th>Winner</th>
+            <th>Benchmark description</th>
+            <th>Comment on result</th>
         </tr>
     </thead>
         <tr>
@@ -16,6 +18,8 @@
             <td>504ms</td>
             <td>6.4x</td>
             <td>Rust</td>
+            <td rowspan=2>1M insert of random u64 numbers in HashSet and unordered_set</td>
+            <td rowspan=2>Rust uses Swiss table for its HashSet implementation, so it is faster</td>
         </tr>
         <tr>
             <td>memory</td>
@@ -31,6 +35,8 @@
             <td>975ms</td>
             <td>3.1x</td>
             <td>Rust</td>
+            <td rowspan=2>1M insert of random u64 numbers in BtreeSet and set</td>
+            <td rowspan=2></td>
         </tr>
         <tr>
             <td>memory</td>
@@ -46,6 +52,8 @@
             <td>755ms</td>
             <td>1.4x</td>
             <td>Rust</td>
+            <td rowspan=2>5M push-push-pop operation of random u64 numbers in BinaryHeap and priority_queue</td>
+            <td rowspan=2></td>
         </tr>
         <tr>
             <td>memory</td>
@@ -61,6 +69,8 @@
             <td>420ms</td>
             <td>1.4x</td>
             <td>Rust</td>
+            <td rowspan=2>100M push of u64 numbers in Vec and vector</td>
+            <td rowspan=2></td>
         </tr>
         <tr>
             <td>memory</td>
@@ -76,6 +86,8 @@
             <td>162ms</td>
             <td>0.6x</td>
             <td>C++</td>
+            <td rowspan=2>100M push of u64 numbers in Vec and vector when reserve(100M+5) is called</td>
+            <td rowspan=2></td>
         </tr>
         <tr>
             <td>memory</td>

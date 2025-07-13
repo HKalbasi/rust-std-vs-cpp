@@ -51,6 +51,8 @@ for_a_single() {
             <td>$wall_time_cpp</td>
             <td>$wall_time_ratio</td>
             <td>$(winner $(to_ns $wall_time_cpp) $(to_ns $wall_time_rust))</td>
+            <td rowspan=2>$(cat ./info.json | jq -r .$1.description)</td>
+            <td rowspan=2>$(cat ./info.json | jq -r .$1.comment_on_result)</td>
         </tr>
         <tr>
             <td>memory</td>
@@ -72,6 +74,8 @@ cat <<EOT > result.md
             <th>C++</th>
             <th>Ratio</th>
             <th>Winner</th>
+            <th>Benchmark description</th>
+            <th>Comment on result</th>
         </tr>
     </thead>
 EOT
