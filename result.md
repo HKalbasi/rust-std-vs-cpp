@@ -140,7 +140,7 @@
             <td>0.6x</td>
             <td>C++</td>
             <td rowspan=2>100M push of u64 numbers in Vec and vector when reserve(100M+5) is called</td>
-            <td rowspan=2></td>
+            <td rowspan=2>The C++ compiler is able to optimize the check for the capacity in the push</td>
         </tr>
         <tr>
             <td>memory</td>

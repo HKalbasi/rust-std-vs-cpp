@@ -21,7 +21,7 @@
     },
     "vector_push_reserved": {
         "description": "100M push of u64 numbers in Vec and vector when reserve(100M+5) is called",
-        "comment_on_result": ""
+        "comment_on_result": "The C++ compiler is able to optimize the check for the capacity in the push"
     },
     "stable_sort": {
         "description": "Sort 1M random u64 numbers using sort and stable_sort",
