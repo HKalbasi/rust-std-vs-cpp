@@ -65,6 +65,8 @@ EOT
 }
 
 cat <<EOT > result.md
+## Results
+
 <table>
     <thead>
         <tr>
@@ -88,4 +90,15 @@ done
 cat <<EOT >> result.md
     </tbody>
 </table>
+
+## System information
+
+Rust compiler:
+\`\`\`
 EOT
+rustc --version --verbose >> result.md
+echo '```' >> result.md
+echo 'C++ compiler' >> result.md
+echo '```' >> result.md
+clang --version >> result.md
+echo '```' >> result.md
