@@ -15,7 +15,7 @@ pub fn main() !void {
             return std.math.order(a, b);
         }
     }.compare);
-    var pq = Queue.init(std.heap.smp_allocator, void{});
+    var pq = Queue.init(std.heap.c_allocator, void{});
     for (0..5_000_000) |_| {
         // pq.addSlice(&.{ MyRand.next(), MyRand.next() }) catch unreachable;
         pq.add(MyRand.next()) catch unreachable;

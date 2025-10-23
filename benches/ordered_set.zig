@@ -12,7 +12,7 @@ const MyRand = struct {
 pub fn main() !void {
     const Treap = std.Treap(u64, std.math.order);
     var treap = Treap{};
-    var node_pool = std.heap.MemoryPool(Treap.Node).init(std.heap.smp_allocator);
+    var node_pool = std.heap.MemoryPool(Treap.Node).init(std.heap.c_allocator);
 
     for (0..1_000_000) |_| {
         var entry = treap.getEntryFor(MyRand.next());
