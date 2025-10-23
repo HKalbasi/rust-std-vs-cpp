@@ -16,8 +16,8 @@
         <tr>
             <td rowspan=2>deque_push</td>
             <td>time</td>
-            <td>88.4ms</td>
-            <td>203ms</td>
+            <td>91.9ms</td>
+            <td>208ms</td>
             <td>2.3x</td>
             <td>Rust</td>
             <td rowspan=2>100M push of u64 numbers in VecDeque and deque</td>
@@ -33,9 +33,9 @@
         <tr>
             <td rowspan=2>hashset</td>
             <td>time</td>
-            <td>22.5ms</td>
-            <td>93.7ms</td>
-            <td>4.2x</td>
+            <td>23.0ms</td>
+            <td>106ms</td>
+            <td>4.6x</td>
             <td>Rust</td>
             <td rowspan=2>1M insert of random u64 numbers in HashSet and unordered_set</td>
             <td rowspan=2>Rust uses Swiss table for its HashSet implementation, so it is faster</td>
@@ -51,15 +51,15 @@
             <td rowspan=2>ordered_set</td>
             <td>time</td>
             <td>88.6ms</td>
-            <td>207ms</td>
-            <td>2.3x</td>
+            <td>215ms</td>
+            <td>2.4x</td>
             <td>Rust</td>
             <td rowspan=2>1M insert of random u64 numbers in BtreeSet and set</td>
             <td rowspan=2></td>
         </tr>
         <tr>
             <td>memory</td>
-            <td>18.2MB</td>
+            <td>18.1MB</td>
             <td>51.5MB</td>
             <td>2.8x</td>
             <td>Rust</td>
@@ -67,24 +67,24 @@
         <tr>
             <td rowspan=2>priority_queue</td>
             <td>time</td>
-            <td>239ms</td>
+            <td>236ms</td>
             <td>248ms</td>
-            <td>1x</td>
+            <td>1.1x</td>
             <td>Rust</td>
             <td rowspan=2>5M push-push-pop operation of random u64 numbers in BinaryHeap and priority_queue</td>
             <td rowspan=2></td>
         </tr>
         <tr>
             <td>memory</td>
-            <td>43.3MB</td>
-            <td>70.9MB</td>
+            <td>43.5MB</td>
+            <td>71.4MB</td>
             <td>1.6x</td>
             <td>Rust</td>
         </tr>
         <tr>
             <td rowspan=2>stable_sort</td>
             <td>time</td>
-            <td>16.4ms</td>
+            <td>16.7ms</td>
             <td>33.5ms</td>
             <td>2x</td>
             <td>Rust</td>
@@ -110,7 +110,7 @@
         </tr>
         <tr>
             <td>memory</td>
-            <td>18.0MB</td>
+            <td>18.1MB</td>
             <td>11.5MB</td>
             <td>0.6x</td>
             <td>C++</td>
@@ -118,8 +118,8 @@
         <tr>
             <td rowspan=2>vector_push</td>
             <td>time</td>
-            <td>65.1ms</td>
-            <td>143ms</td>
+            <td>64.4ms</td>
+            <td>142ms</td>
             <td>2.2x</td>
             <td>Rust</td>
             <td rowspan=2>100M push of u64 numbers in Vec and vector</td>
@@ -135,9 +135,9 @@
         <tr>
             <td rowspan=2>vector_push_reserved</td>
             <td>time</td>
-            <td>59.8ms</td>
-            <td>57.8ms</td>
-            <td>1x</td>
+            <td>73.5ms</td>
+            <td>57.4ms</td>
+            <td>0.8x</td>
             <td>C++</td>
             <td rowspan=2>100M push of u64 numbers in Vec and vector when reserve(100M+5) is called</td>
             <td rowspan=2>The C++ compiler is able to optimize the check for the capacity in the push</td>
@@ -156,13 +156,13 @@
 
 Rust compiler:
 ```
-rustc 1.88.0 (6b00bc388 2025-06-23)
+rustc 1.90.0 (1159e78c4 2025-09-14)
 binary: rustc
-commit-hash: 6b00bc3880198600130e1cf62b8f8a93494488cc
-commit-date: 2025-06-23
+commit-hash: 1159e78c4747b02ef996e55082b704c09b970588
+commit-date: 2025-09-14
 host: x86_64-unknown-linux-gnu
-release: 1.88.0
-LLVM version: 20.1.5
+release: 1.90.0
+LLVM version: 20.1.8
 ```
 C++ compiler
 ```
