@@ -35,12 +35,15 @@ for_a_single() {
     bash ./compile.sh $1
     poop_rust=$(poop ./bin/rust-$1)
     poop_cpp=$(poop ./bin/cpp-$1)
+    poop_zig=$(poop ./bin/zig-$1)
     wall_time_rust=$(echo "$poop_rust" | awk '/wall_time/ {print $2}')
     wall_time_cpp=$(echo "$poop_cpp" | awk '/wall_time/ {print $2}')
+    wall_time_zig=$(echo "$poop_zig" | awk '/wall_time/ {print $2}')
     wall_time_ratio=$(divide $(to_ns $wall_time_cpp) $(to_ns $wall_time_rust))
     
     peak_rss_rust=$(echo "$poop_rust" | awk '/peak_rss/ {print $2}')
     peak_rss_cpp=$(echo "$poop_cpp" | awk '/peak_rss/ {print $2}')
+    peak_rss_zig=$(echo "$poop_zig" | awk '/peak_rss/ {print $2}')
     peak_rss_ratio=$(divide $(to_bytes $peak_rss_cpp) $(to_bytes $peak_rss_rust))
     
     cat <<EOT >> result.md
@@ -49,6 +52,7 @@ for_a_single() {
             <td>time</td>
             <td>$wall_time_rust</td>
             <td>$wall_time_cpp</td>
+            <td>$wall_time_zig</td>
             <td>$wall_time_ratio</td>
             <td>$(winner $(to_ns $wall_time_cpp) $(to_ns $wall_time_rust))</td>
             <td rowspan=2>$(cat ./info.json | jq -r .$1.description)</td>
@@ -58,6 +62,7 @@ for_a_single() {
             <td>memory</td>
             <td>$peak_rss_rust</td>
             <td>$peak_rss_cpp</td>
+            <td>$peak_rss_zig</td>
             <td>$peak_rss_ratio</td>
             <td>$(winner $(to_bytes $peak_rss_cpp) $(to_bytes $peak_rss_rust))</td>
         </tr>
@@ -74,6 +79,7 @@ cat <<EOT > result.md
             <th>Measured property</th>
             <th>Rust</th>
             <th>C++</th>
+            <th>Zig</th>
             <th>Ratio</th>
             <th>Winner</th>
             <th>Benchmark description</th>
@@ -101,6 +107,11 @@ echo '```' >> result.md
 echo 'C++ compiler' >> result.md
 echo '```' >> result.md
 clang --version | rg -v Installed >> result.md
+echo '```' >> result.md
+echo 'Zig compiler' >> result.md
+echo '```' >> result.md
+zig version >> result.md
+zig cc --version | rg -v Installed >> result.md
 echo '```' >> result.md
 echo 'Processor' >> result.md
 echo '```' >> result.md
