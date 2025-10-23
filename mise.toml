@@ -1,0 +1,4 @@
+[tools]
+clang = "20.1"
+rust = "1.88"
+"ubi:andrewrk/poop" = "latest"

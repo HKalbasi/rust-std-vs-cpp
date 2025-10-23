@@ -100,5 +100,9 @@ rustc --version --verbose >> result.md
 echo '```' >> result.md
 echo 'C++ compiler' >> result.md
 echo '```' >> result.md
-clang --version >> result.md
+clang --version | rg -v Installed >> result.md
+echo '```' >> result.md
+echo 'Processor' >> result.md
+echo '```' >> result.md
+cat /proc/cpuinfo  | grep 'name'| uniq >> result.md
 echo '```' >> result.md
